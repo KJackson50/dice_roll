@@ -1,0 +1,36 @@
+import random
+
+def dice_roll():
+    list = [1, 1, 1, 1, 2, 2, 2, 3, 3, 3, 4, 5, 6]
+    result = random.choice(list)
+    #result = random.randrange(1, 7)
+    return result
+
+i = 0
+one_counter = 0
+two_counter = 0
+three_counter = 0
+four_counter = 0
+five_counter = 0
+six_counter = 0
+while i < 100000:
+    roll = dice_roll()
+    if roll == 1:
+        one_counter += 1
+    elif roll == 2:
+        two_counter += 1
+    elif roll == 3:
+        three_counter += 1
+    elif roll == 4:
+        four_counter += 1
+    elif roll == 5:
+        five_counter += 1
+    elif roll == 6:
+        six_counter += 1
+    i += 1
+print(f"This is how many times one hit: {one_counter}")
+print(f"This is how many times two hit: {two_counter}")
+print(f"This is how many times three hit: {three_counter}")
+print(f"This is how many times four hit: {four_counter}")
+print(f"This is how many times five hit: {five_counter}")
+print(f"This is how many times six hit: {six_counter}")
